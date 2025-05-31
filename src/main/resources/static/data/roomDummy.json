@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nama": "Ruang Rapat A",
+    "kapasitas": 12, "location": "Jl. In ajah"
+  },
+  { "id": 2,
+    "nama": "Ruang Diskusi",
+    "kapasitas": 8,
+    "location": "Jl. In ajah"
+  },
+  { "id": 3,
+    "nama": "Ruang Seminar",
+    "kapasitas": 30,
+    "location": "Jl. In ajah"
+  },
+  { "id": 4,
+    "nama": "Ruang Gelut",
+    "kapasitas": 40,
+    "location": "Jl. In ajah"
+  }
+]
