@@ -11,22 +11,44 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/}">
+            <li class="nav-item"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Tables"
+                th:classappend="${menuActive == 'user'} ? 'active'">
+                <a class="nav-link" th:href="@{/user}">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Main Menu</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Tables"
+                th:classappend="${menuActive == 'booking'} ? 'active'">
                 <a class="nav-link" th:href="@{/booking}">
                     <i class="fa fa-fw fa-pencil"></i>
                     <span class="nav-link-text">Booking Room</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Tables"
+                th:classappend="${menuActive == 'activity'} ? 'active'">
                 <a class="nav-link" th:href="@{/activity}">
                     <i class="fa fa-fw fa-wrench"></i>
                     <span class="nav-link-text">Activity</span>
+                </a>
+            </li>
+            <li class="nav-item"
+                data-toggle="tooltip"
+                data-placement="right"
+                title="Tables"
+                th:classappend="${menuActive == 'changepassword'} ? 'active'">
+                <a class="nav-link" th:href="@{/changepassword}">
+                    <i class="fa fa-fw fa-lock"></i>
+                    <span class="nav-link-text">Change Password</span>
                 </a>
             </li>
         </ul>
