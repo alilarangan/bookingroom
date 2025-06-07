@@ -1,8 +1,17 @@
 package alibelajar.spring.web.core.alibelajar;
 
+import alibelajar.spring.web.core.alibelajar.model.User;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class DashboardController {
@@ -21,9 +30,23 @@ public class DashboardController {
 
     @GetMapping("/userdata")
     public String dataUser(Model model){
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8085/user";
+
+        ResponseEntity<ApiResponse> response = restTemplate.exchange(
+                url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<ApiResponse>() {}
+        );
+
+        List<User> users = response.getBody().getData().getContent();
+
+        model.addAttribute("userdata", users);
         model.addAttribute("menuActive", "userdata");
         return "admin/data-user";
     }
+
 
     @GetMapping("facilitydata")
     public String facilityData(Model model){
