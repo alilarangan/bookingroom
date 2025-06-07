@@ -61,6 +61,34 @@
                     <span class="nav-link-text">List Booking Room</span>
                 </a>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-users"></i>
+                    <span class="nav-link-text">Menu Users</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <li class="nav-item"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="Tables"
+                        th:classappend="${menuActive == 'booking'} ? 'active'">
+                        <a class="nav-link" th:href="@{/booking}">
+                            <i class="fa fa-fw fa-pencil"></i>
+                            <span class="nav-link-text">Booking Room</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"
+                        data-toggle="tooltip"
+                        data-placement="right"
+                        title="Tables"
+                        th:classappend="${menuActive == 'activity'} ? 'active'">
+                        <a class="nav-link" th:href="@{/activity}">
+                            <i class="fa fa-fw fa-wrench"></i>
+                            <span class="nav-link-text">Activity</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
