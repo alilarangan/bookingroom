@@ -26,47 +26,21 @@
                             <th>Action</th>
                         </tr>
                         </thead>
-                        <tfoot>
-                        <tr>
-                            <th>No.</th>
-                            <th>ID Room</th>
-                            <th>Room Name</th>
-                            <th>Capacity</th>
-                            <th>Location</th>
-                            <th>Action</th>
-                        </tr>
-                        </tfoot>
                         <tbody id="roomTableBody">
+                            <tr>
+                                <td>1</td>
+                                <td>R01</td>
+                                <td>F01</td>
+                                <td>Chair</td>
+                                <td>12</td>
+                                <td>
+                                    <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#detail-modal">
+                                        <i class="fa fa-pencil-square-o me-2"></i> Detail</button>
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <script>
-                        fetch('/data/roomDummy.json')
-                          .then(res => res.json())
-                          .then(data => {
-                            const tbody = document.getElementById('roomTableBody');
-                            let no = 1;
-                            data.forEach(room => {
-                              tbody.innerHTML += `
-                                <tr>
-                                  <td>${no++}</td>
-                                  <td>${room.id}</td>
-                                  <td>${room.nama}</td>
-                                  <td>${room.kapasitas}</td>
-                                  <td>${room.location}</td>
-                                  <td>
-                                    <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#detail-modal">
-                                      <i class="fa fa-pencil-square-o me-2"></i> Detail
-                                    </button>
-                                    <button class="btn btn-danger btn-sm">
-                                      <i class="fa fa-trash me-2"></i> Delete
-                                    </button>
-                                  </td>
-                                </tr>
-                              `;
-                            });
-                          });
-                    </script>
-
                 </div>
             </div>
         </div>
